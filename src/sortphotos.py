@@ -296,6 +296,7 @@ def sortPhotos(src_dir, dest_dir, sort_format, rename_format, recursive=False,
     if recursive:
         args += ['-r']
 
+    args + ['-i @eaDir']
     args += [src_dir]
 
 
@@ -345,12 +346,6 @@ def sortPhotos(src_dir, dest_dir, sort_format, rename_format, recursive=False,
 
         # ignore hidden files
         if os.path.basename(src_file).startswith('.'):
-            print('hidden file.  will be skipped')
-            print()
-            continue
-        
-        # ignore hidden files
-        if os.path.basename(src_file).startswith('@'):
             print('hidden file.  will be skipped')
             print()
             continue
