@@ -348,7 +348,13 @@ def sortPhotos(src_dir, dest_dir, sort_format, rename_format, recursive=False,
             print('hidden file.  will be skipped')
             print()
             continue
-
+        
+        # ignore hidden files
+        if os.path.basename(src_file).startswith('@'):
+            print('hidden file.  will be skipped')
+            print()
+            continue
+            
         if verbose:
             print('Date/Time: ' + str(date))
             print('Corresponding Tags: ' + ', '.join(keys))
