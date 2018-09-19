@@ -296,7 +296,8 @@ def sortPhotos(src_dir, dest_dir, sort_format, rename_format, recursive=False,
     if recursive:
         args += ['-r']
 
-    args += ['-i \'@eaDir\'']
+    args += ['-i']
+    args += ['@eaDir']
     args += [src_dir]
 
 
